@@ -30,7 +30,7 @@ function App() {
   }
 
   function addTask(taskTitle: string) {
-    setTaskAndSave([
+    setTasks([
       ...tasks,
       {
         id: crypto.randomUUID(),
@@ -42,7 +42,7 @@ function App() {
 
   function deleteTaskById(taskId: string) {
     const newTasks = tasks.filter(task => task.id !== taskId);
-    setTaskAndSave(newTasks);
+    setTasks(newTasks);
   }
 
   function toggleTaskCompletedById(taskId: string) {
@@ -55,7 +55,7 @@ function App() {
       }
       return task;
     });
-    setTaskAndSave(newTasks);
+    setTasks(newTasks);
   }
 
   return (
